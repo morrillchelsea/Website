@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+	<h3>Sign Up</h3>
+	<!--Input block for user e-mail-->
+ 	 <div class="form-group">
+    	<label for="email">Email Address</label>
+    		<input
+		type="email"
+      		class="form-control"
+     		id="email"
+      		name="email"
+     		placeholder="Enter email"
+    	/>
+  	</div>
+ 	
+	<!--Input block for user first name-->
+	<div class="form-group">
+   	 <label for="firstName">First Name</label>
+    		<input
+     	 	type="text"
+     	 	class="form-control"
+      		id="firstName"
+      		name="firstName"
+     		placeholder="Enter first name"
+    		/>
+ 	 </div>
+
+	<!--Input block for user password-->
+	<div class="form-group">
+	<label for="password1">Password</label>
+    		<input
+      		type="password"
+     		class="form-control"
+     		id="password1"
+     		name="password1"
+      		placeholder="Enter password"
+  	/>
+  	</div>
+  
+	<!--Input block for user password verification-->
+	<div class="form-group">
+   	<label for="password2">Password (Confirm)</label>
+   		<input
+     		type="password"
+     		class="form-control"
+     		id="password2"
+     		name="password2"
+      		placeholder="Confirm password"
+   		/>
+  	</div>
+
+	<div><h3>Password requirements:</h3>
+  	<ul>
+  		<li>Must be at least 12 characters in length</li>
+  		<li>Must contain at least one uppercase character</li>
+  		<li>Must contain at least one lowercase character</li>
+  		<li>Must contain at least one numerical character</li>
+  		<li>Must contain at least one special character</li>
+  	</ul>
+  	</div>
+<!--Submission button to submit data to database.db-->
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

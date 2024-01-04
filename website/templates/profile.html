@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+	<h3>My Profile</h3>
+	<p>Name: {{user.first_name}}</p>
+	<p>E-mail Address: {{user.email}}</p>
+	<p>Password: <a href="change-pass">Change Password</a></p>
+{% endblock %}

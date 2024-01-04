@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+	<h3>Change Password</h3>
+ 	<!--Input block for user e-mail-->
+ 	 <div class="form-group">
+    	<label for="email">Email Address</label>
+    		<input
+		type="email"
+      		class="form-control"
+     		id="email"
+      		name="email"
+     		placeholder="Enter email"
+    	/>
+  	</div>
+  	
+	<!--Input block for current (old) password-->
+	<div class="form-group">
+	<label for="current_pass">Current Password</label>
+    		<input
+      		type="password"
+     		class="form-control"
+     		id="current_pass"
+     		name="current_pass"
+      		placeholder="Enter current password"
+  	/>
+  	</div>
+  
+	<!--Input block for desired password-->
+	<div class="form-group">
+   	<label for="new_pass1">Desired Password</label>
+   		<input
+     		type="password"
+     		class="form-control"
+     		id="new_pass1"
+     		name="new_pass1"
+      		placeholder="Enter desired password"
+   		/>
+  	</div>
+  	<!--Input block for verification desired password-->
+	<div class="form-group">
+   	<label for="new_pass2">Desired Password (Confirm)</label>
+   		<input
+     		type="password"
+     		class="form-control"
+     		id="new_pass2"
+     		name="new_pass2"
+      		placeholder="Confirm desired password"
+   		/>
+  	</div>
+  	
+  	<div><h3>Password requirements:</h3>
+  	<ul>
+  		<li>Must be at least 12 characters in length</li>
+  		<li>Must contain at least one uppercase character</li>
+  		<li>Must contain at least one lowercase character</li>
+  		<li>Must contain at least one numerical character</li>
+  		<li>Must contain at least one special character</li>
+  	</ul>
+  	</div>
+  	
+<!--Submission button to submit data to database.db-->
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

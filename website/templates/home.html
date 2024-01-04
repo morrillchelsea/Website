@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+	{% if user.is_authenticated %}
+		<h1>~Welcome, {{user.first_name}}!~</h1>
+	{% else %}
+		<h1>~Welcome!~</h1>
+	{% endif %}
+	<h2><img src="../static/images/poptart1.jpeg" alt="poptart"></head><img src="../static/images/benito1.jpeg" alt="benito1"></head><img src="../static/images/chorizo1.jpeg" alt="chorizo1"></head></h2>
+	<h3>{{ date }}</h3>
+
+{% if user.is_authenticated %}
+  <table border="1" class="center">
+  <caption>Pet Summary</caption>
+      <tr>
+  	<th>Name</th>
+	<td>Pop Tart</td>
+	<td>Benito</td>
+	<td>Chorizo</td>
+     </tr>
+     <tr>
+	<th>Age (Years, Months)</th>
+	<td>7</td>
+	<td>1, 2</td>
+	<td>1, 2</td>
+     </tr>
+     <tr>
+	<th>Species</th>
+	<td>Cat</td>
+	<td>Dog</td>
+	<td>Dog</td>
+     </tr>
+	<th>Breed</th>
+	<td>Domestic Short Hair</td>
+	<td>German Shepherd</td>
+	<td>Golden Retriever</td>
+     <tr>
+	<th>Color</th>
+	<td>Black and White</td>
+	<td>White/Gold</td>
+	<td>Gold</td>
+     </tr>
+  </table>
+{% endif %}
+
+{% endblock %}

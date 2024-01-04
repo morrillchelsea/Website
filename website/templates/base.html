@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!--Modifies site title if one is supplied-->
+	{% if title %}
+ 		<title> My Pets - {{title}} </title>
+	{% else %}
+		<title>My Pets</title>
+	{% endif %}
+
+	<!--Link to style sheet-->
+	<link rel="stylesheet" href="../static/styles.css" />
+
+</head>
+<body>
+
+<div class="header">
+	<h1>My Pets</h1>
+</div>
+<!--Navigation Bar-->
+<div class="topnav">
+	{% if user.is_authenticated %}  
+		<!-- Logged in -->
+		<a class="active" href="/">Home</a>
+		<a href="profile">My Profile</a>
+		<a href="poptart">Pop Tart</a>
+		<a href="beni">Benito</a>
+		<a href="chorizo">Chorizo</a>
+         	<a href="logout">Logout</a>
+	{% else %}
+		<!-- Not Logged in -->
+		<a class="active" href="/">Home</a>
+          	<a href="login">Log In</a>
+         	<a href="sign-up">Sign Up</a>
+	{% endif %}
+</div>
+
+<!--Flash messages to user-->
+{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+		{% for message in messages %}
+		<div class="alert alert-danger alter-dismissible" role = "alert">
+			{{ message }}
+			<button type = "button" class = "close" data-dismiss="alert">
+			<span aria-hidden="true">&times;</span>
+		</div>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+
+<!--Block content-->
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
+
+
